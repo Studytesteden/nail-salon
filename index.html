@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Milano璀璨美甲</title>
+  <style>
+    body {
+      font-family: "微软雅黑", sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff66a6;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      background-color: #ffe3ec;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .service h3 {
+      background-color: #fff0f5;
+      padding: 10px;
+      border: 1px solid #ffd6e0;
+      cursor: pointer;
+    }
+    .service p {
+      display: none;
+      padding: 10px;
+      background: white;
+      border: 1px solid #ffe0eb;
+    }
+    .gallery img {
+      width: 30%;
+      margin: 1%;
+      border-radius: 8px;
+    }
+    form {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    footer {
+      text-align: center;
+      background-color: #ffe3ec;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Milano璀璨美甲</h1>
+  <p>Via Giuseppe Giusti 30, 20154 Milano, Italia</p >
+</header>
+
+<nav>
+  关于我们
+  服务项目
+  作品展示
+  在线预约
+  店铺地址
+</nav>
+
+<div class="container">
+  <section id="about">
+    <h2>关于我们</h2>
+    <p>欢迎来到Milano璀璨美甲！我们是一家位于意大利米兰市中心的高端美甲工作室，提供专业护理、时尚设计与舒适体验。</p >
+  </section>
+
+  <section id="services">
+    <h2>服务项目</h2>
+    <div class="service">
+      <h3 onclick="toggleService(this)">基础护理</h3>
+      <p>包含修型、去死皮、保湿护理。</p >
+    </div>
+    <div class="service">
+      <h3 onclick="toggleService(this)">凝胶美甲</h3>
+      <p>持久亮丽的凝胶美甲服务，颜色丰富。</p >
+    </div>
+    <div class="service">
+      <h3 onclick="toggleService(this)">美甲设计</h3>
+      <p>独家定制图案设计，包含贴钻、绘画等。</p >
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>作品展示</h2>
+    <div class="gallery">
+      < img src="https://via.placeholder.com/250x200?text=款式1">
+      < img src="https://via.placeholder.com/250x200?text=款式2">
+      < img src="https://via.placeholder.com/250x200?text=款式3">
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>在线预约</h2>
+    <form onsubmit="submitBooking(event)">
+      <label>姓名：<br><input type="text" id="name" required></label><br><br>
+      <label>电话：<br><input type="tel" id="phone" required></label><br><br>
+      <label>预约时间：<br><input type="datetime-local" id="time" required></label><br><br>
+      <label>留言：<br><textarea id="message" rows="4" cols="40"></textarea></label><br><br>
+      <button type="submit">提交预约</button>
+    </form>
+    <p id="confirmation" style="color:green;"></p >
+  </section>
+
+  <section id="map">
+    <h2>店铺地址</h2>
+    <p>Via Giuseppe Giusti 30, 20154 Milano, Italia</p >
+    <iframe src="https://www.google.com/maps?q=Via%20Giuseppe%20Giusti%2030,%2020154%20Milano,%20Italia&output=embed" 
+            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen>
+    </iframe>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Milano璀璨美甲 | 电话：+39 123 456 7890 | 微信：cuican-nails
+</footer>
+
+<script>
+  function toggleService(element) {
+    const p = element.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function submitBooking(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    document.getElementById("confirmation").innerText = `感谢您，${name}！我们会尽快与您联系确认预约。`;
+  }
+</script>
+
+</body>
+</html>
